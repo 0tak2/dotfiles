@@ -1,7 +1,13 @@
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
-plugins=(git)
+plugins=(
+  git
+  docker
+  podman
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 source $ZSH/oh-my-zsh.sh
 
 # Starship
