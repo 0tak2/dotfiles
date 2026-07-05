@@ -14,7 +14,7 @@
       - 형식: `prefix: 한국어 작업 요약`
       - 예시: `feat: 가맹점 정산 인보이스 목록 응답에 청구금액(billingAmount) 추가`\
     - Description
-      - 형식: 한국어로 작성, 간략하게 요점 위주로 정리, 마지막에 `Co-authored-by: Codex <noreply@openai.com>` 추가하여 에이전트 작업임을 명시
+      - 형식: 한국어로 작성, 간략하게 요점 위주로 정리, 마지막에 `Co-authored-by: {AGENT_GIT_EMAIL, examples="[Codex <noreply@openai.com>", "Claude <noreply@anthropic.com>"]}` 추가하여 에이>전트 작업임을 명시
 * PR
   - 의도된 상황(예시> 라이브 배포, main 핫픽스, 사용자 요청)이 아니라면 베이스는 dev로 지정
   - PR 제목
@@ -23,5 +23,5 @@
   - PR 본문
     - 한국어로 작성하기
     - 간략하게 요점 위주 정리
-    - 마지막에 `🤖 이 PR은 {AGENT_NAME_WITH_LLM_NAME}가 작성했습니다`라고 덧붙여 에이전트 작성 PR임을 명시
+    - 마지막에 `🤖 이 PR은 {AGENT_NAME_WITH_MODEL_NAME}가 작성했습니다`라고 덧붙여 에이전트 작성 PR임을 명시
 * 레포 별 AGENTS.md와 이 내용이 충돌된다면 레포별 규칙을 우선 적용
