@@ -52,7 +52,21 @@ export PATH=$PATH:$(go env GOPATH)/bin
 [[ -s "/Users/limo/.gvm/scripts/gvm" ]] && source "/Users/limo/.gvm/scripts/gvm"
 source ${HOME}/.ghcup/env
 
-# for testcontainers
-export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')
+# podman helper
+podman-up() {
+  local state
+  state="$(podman machine inspect --format '{{.State}}' 2>/dev/null)"
+
+  if [[ "$state" == "running" ]]; then
+    echo "Podman machine is already running."
+    return 0
+  fi
+
+  podman machine start
+
+  export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')
+}
+alias pup=podman-up
+
 
 fastfetch
