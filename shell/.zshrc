@@ -52,5 +52,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 [[ -s "/Users/limo/.gvm/scripts/gvm" ]] && source "/Users/limo/.gvm/scripts/gvm"
 source ${HOME}/.ghcup/env
 
-fastfetch
+# for testcontainers
+export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')
 
+fastfetch
